@@ -1,0 +1,47 @@
+﻿<Window x:Class="ChatClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChatClient"
+        mc:Ignorable="d"
+        Title="Project: Chat" Height="491.6" Width="930.4" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="#FF96B1BA"/>
+                <GradientStop Color="#FFFF9292" Offset="1"/>
+                <GradientStop Color="#FFFDBEBE" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <TextBox x:Name="tbUserName" HorizontalAlignment="Left" Height="23" Margin="170,8,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="bConnDiscon" Content="Connect" HorizontalAlignment="Left" Margin="295,6,0,0" VerticalAlignment="Top" Width="160" Height="24" Click="Button_Click"/>
+        <ListBox x:Name="lbChat" HorizontalAlignment="Left" Height="294" Margin="9,82,0,0" VerticalAlignment="Top" Width="774" Background="White"/>
+        <TextBox x:Name="tbMessage" HorizontalAlignment="Left" Height="70" Margin="9,381,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="774" KeyDown="tbMessage_KeyDown"/>
+        <TextBox x:Name="tbPassword" HorizontalAlignment="Left" Height="23" Margin="170,43,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="bRegister" Content="Register" HorizontalAlignment="Left" Margin="295,43,0,0" VerticalAlignment="Top" Width="160" Height="23" Click="bRegister_Click"/>
+        <Label x:Name="labelLogin"  Content="Электронная почта/логин
+               " HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top" Width="155"/>
+        <Label x:Name="labelPassword" Content="Пароль" HorizontalAlignment="Left" Margin="110,40,0,0" VerticalAlignment="Top" Width="55"/>
+        <Label x:Name="labelSM" Content="Искать сообщение" HorizontalAlignment="Left" Margin="475,6,0,0" VerticalAlignment="Top" IsHitTestVisible="False"/>
+        <TextBox x:Name="tbSM" HorizontalAlignment="Left" Height="23" Margin="594,8,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" KeyDown="tbSM_KeyDown"/>
+        <Image x:Name="imSMClose" HorizontalAlignment="Left" Height="20" Margin="719,10,0,0" VerticalAlignment="Top" Width="20" Source="cross2.png" MouseDown="imSMClose_Click"/>
+        <TabControl x:Name="tcChannelPages" HorizontalAlignment="Left" Height="100" Margin="788,82,0,0" VerticalAlignment="Top" Width="126" Loaded="tcChannelPages_Loaded" SelectionChanged="tcChannelPages_SelectionChanged">
+            <TabItem Header="main">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="btnChCreate" Content="Создать канал" HorizontalAlignment="Left" Margin="788,187,0,0" VerticalAlignment="Top" Width="126" Height="23" Click="btnChCreate_Click"/>
+        <Button x:Name="btnChDelete" Content="Удалить канал" HorizontalAlignment="Left" Margin="788,215,0,0" VerticalAlignment="Top" Width="126" Height="23" Click="btnChDelete_Click"/>
+        <StackPanel x:Name="pChCrDel" HorizontalAlignment="Left" Height="133" Margin="788,243,0,0" VerticalAlignment="Top" Width="126" Background="#FFFF8080">
+            <Label Content="Название канала:"/>
+            <TextBox x:Name="tbChName" Height="23" TextWrapping="Wrap" Text=""/>
+            <StackPanel x:Name="pForLogin" Height="50" Margin="0,0,-0.2,0">
+                <Label Content="Логин руководителя:"/>
+                <TextBox x:Name="tbChManager" Height="23" TextWrapping="Wrap" Text=""/>
+            </StackPanel>
+            <Button x:Name="btnChCrDel" Content="Создать" Margin="0,0,0.4,0" Height="34" Click="btnChCrDel_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
